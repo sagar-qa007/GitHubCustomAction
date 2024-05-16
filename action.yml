@@ -1,0 +1,17 @@
+name:  "Podcast generator"
+author: "Sagar Khalasi"
+description: "Generate feed for pod cast from the yaml file"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: "git-branch"
+  color: "orange"
+input:
+  email:
+    description: The commiter's email address.
+    required: true
+    default: ${{ github.actor }}@localhost
+  name: The commiter's name
+    required: true
+    defauls: ${{ github.actor }}
