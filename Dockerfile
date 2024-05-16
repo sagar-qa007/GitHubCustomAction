@@ -8,15 +8,10 @@ RUN apt-get update && apt-get install -y \
     python3-requests \
     python3-venv \
     python3-full \
+    python3-yaml \
     git \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-
-# Set environment variable to prevent externally managed environment error
-ENV PIP_NO_EXTERNAL_ENVIRONMENT=true
-
-# Install PyYAML using pip
-RUN pip3 install PyYAML
 
 # Copy feed.py to /usr/bin/
 COPY feed.py /usr/bin/feed.py
