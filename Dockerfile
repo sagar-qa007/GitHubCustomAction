@@ -12,6 +12,9 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# Set environment variable to prevent externally managed environment error
+ENV PIP_NO_EXTERNAL_ENVIRONMENT=true
+
 # Install PyYAML using pip
 RUN pip3 install PyYAML
 
